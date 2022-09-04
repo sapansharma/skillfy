@@ -1,5 +1,15 @@
 # skillfy
-It's not a full fledge website but a prototype.We have tried to create a website to connect developers with different skillsets to create a new project or improve their skills.
+Skillfy- Find your Devmates
+It's not a full fledge website but a prototype.We have tried to create a website to connect developers with different skillsets to create a new project or improve their skills. It's different from upwork like websites as here companies are not posting project but freshers with minimal experience post an idea and they chat if they are like minded people or there vibes match they can work together to create a project. 
 there are two types of login one for admin another for normal user.Admin have some extra privalages for adding tests and mentors.
-Admin Username: admin@admin.com Password:admin
-languages used are nodeJs, HTML, CSS, Bootstrap Javascript and MongoDB.
+Admin Username: admin@admin.com Password:admin 
+Technologies used are nodeJs, HTML, CSS, Bootstrap Javascript and MongoDB.
+It's based on open initiative theme. 
+Team no. 55
+Team name : Runtime Terror
+Team members : 5
+Deepanshu - DCH-8015
+Aditya - DCH-8009
+Jasraj - DCH-8152
+Sapan - DCH-8158
+Prince - DCH-8010
