@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+    <div style="margin: auto;" class="max1">
+        <div>
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="./img/logo.png" height="100px" alt="" srcset=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/qw">Home</a>
+          <a class="nav-link" href="/pro">Project</a>
+          <a class="nav-link" href="/mentortable">Mentor Details</a>
+          <a class="nav-link" href="/profile">Profile</a>
+          <%if(user.profile=='admin'){%>
+          <a class="nav-link" href="/postskill">Post Skill</a>
+          <a class="nav-link" href="/mentor">Mentor</a>
+          <%}%>
+          <a href="logout"  class="nav-link">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <hr>
+        <div style="padding: 10px 0px;" class="fl">
+<div class="fl-10">
+<!-- banner -->
+
+
+
+
+
+<!-- course detail -->
+<h2 style="text-align: center;" class="fs1">Projects</h2>
+
+<div style="flex-wrap: wrap;justify-content: space-between;" class="fl">
+    <% data.forEach(function(data,i){%>
+    <div style="max-width: 400px;text-align: center;min-width: 250px;margin:20px 10px ;" class="fl-3 box-s">
+        
+                        <h4 style="padding: 5px 0px 5px 0px;" class="fs3"><%=data.name%></h4>
+                        <div style="width: 100%;flex-direction: column;" class="fl">
+                            <div class="fl-2">
+                                <h3 style="padding: 5px 0px;" class="fs4">Team required</h3>
+                            </div>
+                            <div class="fl-2">
+                                <h3 style="padding: 5px 0px;" class="fs4"><%=data.noofteam%></h3>
+                            </div>
+                        </div>
+                        
+                        <h4 style="padding: 5px 0px 5px 0px;" class="fs3">Requid Skill</h4>
+                        <div style="flex-wrap: wrap;padding: 10px;max-width: 280px;margin: auto;" class="fl">
+                            <% data.skill.forEach(function(data,i){ console.log(data)%>
+                            <h3 class="fs8"><%=data%></h3>
+                            <%});%>
+                        </div>
+                        <hr>
+                        <form action="/proposel" method="post">
+                            <input type="hidden" name="pid" value="<%=data.id%>">
+                            <input type="hidden" name="clientid" value="<%=user._id%>">
+                            <input type="hidden" name="clientname" value="<%=user.username%>">
+                            <input type="hidden" name="clientphone" value="<%=user.phone%>">
+                            <input type="hidden" name="pname" value="<%=data.name%>">
+                            <button onclick="postskill(this)" id="ppob" class="inp1">Apply for project</button>
+                        </form>
+    </div>
+    <%});%>
+   
+</div>
+
+
+</div>
+
+        </div>
+        <div>
+<!-- footer -->
+        </div>
+    </div>
+    <footer>
+        <hr>
+        <h3  class="fs4">Power by Skillfy</h3>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
